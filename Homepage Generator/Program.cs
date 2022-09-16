@@ -11,8 +11,7 @@ namespace Homepage_Generator
 
             //Svar från ett API
             string[] techniques = { " C#", "daTAbaser", "WebbuTVeckling ", "clean Code " };
-
-            List<string> medelandenList = new List<string>();
+            string[] medelandeList = { "Måndag idrott", "Tisdag musik", "Onsdag utedag", "Torsdag kör", "Fredag ledig" };
 
             void header()
             {
@@ -21,11 +20,11 @@ namespace Homepage_Generator
                 "           \n<body>");
             }
 
-            void mainPart(string klassnamn, List<string> medelandetList)
+            void mainPart(string klassnamn, string[] medelandeList)
             {
                 Console.WriteLine("     <h1> Välkomna " + klassnamn + "! </h1>");
 
-                foreach (string medelandeItem in medelandenList)
+                foreach (string medelandeItem in medelandeList)
                 {
                     Console.WriteLine("     <p><b> Meddelande: </b> " + medelandeItem + " </p>");
                 }
@@ -47,32 +46,32 @@ namespace Homepage_Generator
                 "           \n</html>");
             }
 
-            void SparaMedelandenIEnList()
-            {
-                Console.Write("Skriv in ditt medelande: ");
-                medelandenList.Add(Console.ReadLine());
+            //void SparaMedelandenIEnList()
+            //{
+            //    Console.Write("Skriv in ditt medelande: ");
+            //    medelandenList.Add(Console.ReadLine());
 
-                while (fleraMedelandet == true)
-                {
-                    Console.Write("Vill du lägga till fler? (svara med j eller n) ");
-                    string svar = Console.ReadLine();
+            //    while (fleraMedelandet == true)
+            //    {
+            //        Console.Write("Vill du lägga till fler? (svara med j eller n) ");
+            //        string svar = Console.ReadLine();
 
-                    if (svar == "j")
-                    {
-                        Console.Write(": ");
-                        medelandenList.Add(Console.ReadLine());
-                    }
-                    else
-                    {
-                        fleraMedelandet = false;
-                    }
-                    Console.WriteLine();
-                }
-            }
+            //        if (svar == "j")
+            //        {
+            //            Console.Write(": ");
+            //            medelandenList.Add(Console.ReadLine());
+            //        }
+            //        else
+            //        {
+            //            fleraMedelandet = false;
+            //        }
+            //        Console.WriteLine();
+            //    }
+            //}
 
-            SparaMedelandenIEnList();
+            //SparaMedelandenIEnList();
             header();
-            mainPart("klass 5B", medelandenList);
+            mainPart("klass 5B", medelandeList);
             footer();
         }
     }
