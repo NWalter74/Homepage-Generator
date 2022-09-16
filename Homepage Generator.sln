@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homepage Generator", "Homepage Generator\Homepage Generator.csproj", "{2D495BE8-13FB-438B-845D-367FC5B708FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D495BE8-13FB-438B-845D-367FC5B708FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D495BE8-13FB-438B-845D-367FC5B708FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D495BE8-13FB-438B-845D-367FC5B708FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D495BE8-13FB-438B-845D-367FC5B708FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53D63DE4-2E48-4AD5-9022-A0F08758AF3B}
+	EndGlobalSection
+EndGlobal
