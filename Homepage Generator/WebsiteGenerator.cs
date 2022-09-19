@@ -9,6 +9,8 @@ namespace Homepage_Generator
         private string[] techniqueListAPI;
         private string[] medelandeListAPI;
         private string className;
+
+        //Konstruktor
         public WebsiteGenerator(string myClassName, string [] myTechniqueList, string [] myMedelandeList)
         {
             this.className = myClassName;
@@ -16,7 +18,8 @@ namespace Homepage_Generator
             this.medelandeListAPI = myMedelandeList;
         }
 
-        public void header()
+        //denna metod är virtual för att jag kan overrida den i den ärvande klassen StyledWebsiteGenerator
+        virtual protected void header()
         {
             Console.WriteLine("<!DOCTYPE htm >" +
             "           \n<html>" +
