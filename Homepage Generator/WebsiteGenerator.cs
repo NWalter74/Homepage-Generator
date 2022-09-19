@@ -6,11 +6,12 @@ namespace Homepage_Generator
 {
     class WebsiteGenerator
     {
+        private string[] techniqueListAPI;
+        private string[] medelandeListAPI;
         public WebsiteGenerator(string [] myTechniqueList, string [] myMedelandeList)
         {
-            string[] techniqueListAPI = myTechniqueList;
-
-            string[] medelandeListAPI = myMedelandeList;
+            techniqueListAPI = myTechniqueList;
+            medelandeListAPI = myMedelandeList;
         }
 
         public void header()
@@ -24,9 +25,9 @@ namespace Homepage_Generator
         {
             Console.WriteLine("     <h1> Välkomna " + klassnamn + "! </h1>");
 
-            foreach (string item in techniqueListAPI)
+            foreach (string techniquesItem in techniqueListAPI)
             {
-                Console.WriteLine("     <p> Kurs om " + item + " </p>");
+                Console.WriteLine("     <p> Kurs om " + techniquesItem + " </p>");
             }
 
             Console.WriteLine("  <main>");
