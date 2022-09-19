@@ -6,9 +6,12 @@ namespace Homepage_Generator
 {
     class WebsiteGenerator
     {
-        //Data från ett API
-        string[] techniquesList = { " C#", "daTAbaser", "WebbuTVeckling ", "clean Code " };
-        string[] medelandeList = { "Måndag idrott", "Tisdag musik", "Onsdag utedag", "Torsdag kör", "Fredag ledig" };
+        public WebsiteGenerator(string [] myTechniqueList, string [] myMedelandeList)
+        {
+            string[] techniqueListAPI = myTechniqueList;
+
+            string[] medelandeListAPI = myMedelandeList;
+        }
 
         public void header()
         {
@@ -17,22 +20,20 @@ namespace Homepage_Generator
             "           \n<body>");
         }
 
-        public void mainPart(string klassnamn)
+        public void mainPart(string klassnamn, string[] techniqueListAPI, string[] medelandeListAPI)
         {
             Console.WriteLine("     <h1> Välkomna " + klassnamn + "! </h1>");
 
-            foreach (string medelandeItem in this.medelandeList)
+            foreach (string item in techniqueListAPI)
             {
-                Console.WriteLine("     <p><b> Meddelande: </b> " + medelandeItem + " </p>");
+                Console.WriteLine("     <p> Kurs om " + item + " </p>");
             }
 
             Console.WriteLine("  <main>");
-
-            foreach (string item in this.techniquesList)
+            
+            foreach (string medelandeItem in medelandeListAPI)
             {
-                string kurs = item.Trim().ToLower();
-                string newKurs = kurs[0].ToString().ToUpper() + kurs.Substring(1);
-                Console.WriteLine("     <p> Kurs om " + newKurs + " </p>");
+                Console.WriteLine("     <p><b> Meddelande: </b> " + medelandeItem + " </p>");
             }
         }
 
