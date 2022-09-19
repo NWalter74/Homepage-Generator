@@ -8,10 +8,12 @@ namespace Homepage_Generator
     {
         private string[] techniqueListAPI;
         private string[] medelandeListAPI;
-        public WebsiteGenerator(string [] myTechniqueList, string [] myMedelandeList)
+        private string className;
+        public WebsiteGenerator(string myClassName, string [] myTechniqueList, string [] myMedelandeList)
         {
-            techniqueListAPI = myTechniqueList;
-            medelandeListAPI = myMedelandeList;
+            this.className = myClassName;
+            this.techniqueListAPI = myTechniqueList;
+            this.medelandeListAPI = myMedelandeList;
         }
 
         public void header()
@@ -25,14 +27,20 @@ namespace Homepage_Generator
         {
             Console.WriteLine("     <h1> Välkomna " + klassnamn + "! </h1>");
 
-            foreach (string techniquesItem in techniqueListAPI)
+            for (int i = 0; i < techniqueListAPI.Length; i++)
+            {
+                techniqueListAPI[i] = techniqueListAPI[i].Trim().ToLower();
+                techniqueListAPI[i] = techniqueListAPI[i][0].ToString().ToUpper() + techniqueListAPI[i].Substring(1);
+            }
+
+            foreach (string techniquesItem in this.techniqueListAPI)
             {
                 Console.WriteLine("     <p> Kurs om " + techniquesItem + " </p>");
             }
 
             Console.WriteLine("  <main>");
             
-            foreach (string medelandeItem in medelandeListAPI)
+            foreach (string medelandeItem in this.medelandeListAPI)
             {
                 Console.WriteLine("     <p><b> Meddelande: </b> " + medelandeItem + " </p>");
             }
@@ -43,6 +51,13 @@ namespace Homepage_Generator
             Console.WriteLine("  </main>" +
             "           \n</body>" +
             "           \n</html>");
+        }
+
+        public void printPage()
+        {
+            header();
+            mainPart("klass 5B", techniqueListAPI, medelandeListAPI);
+            footer();
         }
     }
 }
